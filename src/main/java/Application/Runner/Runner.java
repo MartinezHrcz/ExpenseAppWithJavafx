@@ -16,7 +16,9 @@ public class Runner {
 
     //Entry point
     public static void main(String[] args) throws IOException {
+
         RunnerMainMenu();
+
     }
 
     //Main menu runner
