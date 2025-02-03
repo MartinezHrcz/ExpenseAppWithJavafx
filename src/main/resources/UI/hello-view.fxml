@@ -13,5 +13,5 @@
     </padding>
 
     <Label fx:id="TextHere"/>
-    <Button text="Niggeer!" />
+    <Button text="Button" />
 </VBox>
