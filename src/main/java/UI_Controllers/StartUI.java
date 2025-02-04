@@ -25,6 +25,22 @@ public class StartUI extends Application {
         stage.setScene(scene);
         stage.show();
     }
+    public static void ExpenseLoad() throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(StartUI.class.getResource("Expense.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Expenses");
+        stage.setScene(scene);
+        stage.show();
+    }
+    public static void FinancesLoad() throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(StartUI.class.getResource("Finance.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Finances");
+        stage.setScene(scene);
+        stage.show();
+    }
 
     public static void main(String[] args) {
         launch();
