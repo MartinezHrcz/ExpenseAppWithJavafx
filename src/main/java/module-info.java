@@ -7,6 +7,6 @@ module hm.branchproject.expenseapp {
     requires net.synedra.validatorfx;
     requires org.kordamp.bootstrapfx.core;
 
-    opens UI to javafx.fxml;
-    exports UI;
+    opens UI_Controllers to javafx.fxml;
+    exports UI_Controllers;
 }
