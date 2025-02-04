@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class StartUI extends Application {
+
+    //Loads in the main menu when the applications is started
     @Override
     public void start(Stage stage) throws IOException {
         stage = new Stage();
@@ -17,6 +19,7 @@ public class StartUI extends Application {
         stage.setScene(scene);
         stage.show();
     }
+    //Used to load in Income menu
     public static void IncomeLoad() throws IOException {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(StartUI.class.getResource("Income.fxml"));
@@ -25,6 +28,7 @@ public class StartUI extends Application {
         stage.setScene(scene);
         stage.show();
     }
+    //Used to load in Expense menu
     public static void ExpenseLoad() throws IOException {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(StartUI.class.getResource("Expense.fxml"));
@@ -33,6 +37,7 @@ public class StartUI extends Application {
         stage.setScene(scene);
         stage.show();
     }
+    //Used to load in Finances menu
     public static void FinancesLoad() throws IOException {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(StartUI.class.getResource("Finance.fxml"));
