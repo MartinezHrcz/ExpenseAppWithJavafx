@@ -5,7 +5,7 @@ import Application.Menus.ExpensesMenu;
 import Application.Menus.FinancesMenu;
 import Application.Menus.IncomeMenu;
 import Application.Utils.Menu;
-import UI_Controllers.StartUI;
+import UI.StartUI;
 
 import java.io.IOException;
 import java.util.Scanner;

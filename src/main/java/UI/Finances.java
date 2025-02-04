@@ -1,4 +1,4 @@
-package UI_Controllers;
+package UI;
 
 public class Finances {
 }

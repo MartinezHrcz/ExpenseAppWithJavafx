@@ -8,6 +8,6 @@ module hm.branchproject.expenseapp {
     requires org.kordamp.bootstrapfx.core;
     requires java.desktop;
 
-    opens UI_Controllers to javafx.fxml;
-    exports UI_Controllers;
+    opens UI to javafx.fxml;
+    exports UI;
 }
