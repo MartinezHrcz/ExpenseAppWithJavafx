@@ -1,3 +1,4 @@
+#**Expense app**
 This is a simple expense and income managing app written in Java which uses JavaFX for UI
 
 The idea was co-founded with my friend (ricsix19) who i started this project together 
