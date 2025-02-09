@@ -5,6 +5,7 @@ import Application.Menus.ExpensesMenu;
 import Application.Menus.FinancesMenu;
 import Application.Menus.IncomeMenu;
 import Application.Utils.Menu;
+import UI.StartUI;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -16,11 +17,10 @@ public class Runner {
 
     //Entry point
     public static void main(String[] args) throws IOException {
-
-        RunnerMainMenu();
-
+        StartUI.main(args);
     }
 
+    //Only console
     //Main menu runner
     private static void RunnerMainMenu() throws IOException {
 
