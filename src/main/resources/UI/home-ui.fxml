@@ -13,17 +13,17 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <Button id="Expenses_Btn" layoutX="219.0" layoutY="200.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="162.0" text="Expenses">
+      <Button id="Expenses_Btn" layoutX="219.0" layoutY="200.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="162.0" text="Expenses" onAction="#ButtonClicked">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button id="Finances_Btn" layoutX="219.0" layoutY="260.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="162.0" text="Finances">
+      <Button id="Finances_Btn" layoutX="219.0" layoutY="260.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="162.0" text="Finances" onAction="#ButtonClicked">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Text layoutX="219.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Income and Expenses" textAlignment="CENTER" wrappingWidth="162.4000000000001">
+      <Text layoutX="219.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Income and Expenses" textAlignment="CENTER" wrappingWidth="162.4000000000001" >
          <font>
             <Font size="20.0" />
          </font>
