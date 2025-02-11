@@ -9,7 +9,7 @@ import javafx.scene.image.Image;
 import java.io.IOException;
 
 public class StartUI extends Application {
-    private static Stage window;
+    public static Stage window;
     //Loads in the main menu when the applications is started
     @Override
     public void start(Stage stage) throws IOException {
@@ -47,7 +47,7 @@ public class StartUI extends Application {
     public static void BackToMain() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(StartUI.class.getResource("home-ui.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        window.setTitle("Finances");
+        window.setTitle("ExpenseApp");
         window.setScene(scene);
     }
 
