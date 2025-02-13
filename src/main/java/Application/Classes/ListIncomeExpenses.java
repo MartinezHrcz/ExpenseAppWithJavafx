@@ -23,55 +23,18 @@ public class ListIncomeExpenses {
     //Income methods:
 
     //Adds value to Income list
-    public static void AddtoIncomeList() throws IOException {
-        Scanner userIncInputSC = new Scanner(System.in);
+    public static boolean AddtoIncomeList(String name, double amount, String desc, String Date) {
         Income i;
-        //Data gathering about the income source:
-        System.out.println("Is this income reoccuring? (Y/N)");
-        String reo = userIncInputSC.nextLine(); //Is it reoccuring?
+        //Precheck
+        name = name.trim();
+        desc = desc.trim();
 
-        System.out.println("Name of income: ");
-        String name = userIncInputSC.nextLine();//Name of income
-
-        System.out.println("Description of income: ");
-        String description = userIncInputSC.nextLine();//Description of income
-
-        //amount is asked until it is valid
-        System.out.println("Amount of income: ");
-        double amount=0;
-        do {
-            try{
-                amount = Double.parseDouble(userIncInputSC.nextLine());
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter a valid number!");
-            }
+        if (name.length() == 0 || amount<0 || Date.length() == 0){
+            return false;
         }
-        while (amount <= 0);
-
-
-        //Only gets called if the income is reoccuring
-        if (reo.equals("Y")) {
-            System.out.println("Date (Day of month) of reoccurenc: ");
-            int date = 0;
-            //tries to get a date if it isn't in the valid range
-            do {
-                //for checking if the value is
-                try {
-                    date = Integer.parseInt(userIncInputSC.nextLine()); //Day of reoccurance
-                } catch (NumberFormatException e) {
-                    System.out.println("Invalid date, please try again!");
-                }
-            }
-            while (date < 1 || date > 30) ;
-            i = new Income(name,amount,description,date); //New income is made with date of reoccurance
-        }
-
-        //if the income isn't reoccuring
-        else{
-            i = new Income(name,amount,description); //New income is made without reoccurence
-        }
-
+        i = new Income(name, amount, desc);
         IncomeList.add(i);
+        return true;
     }
 
     //Removes specified Income from IncomeList
@@ -124,7 +87,6 @@ public class ListIncomeExpenses {
 
         }
         System.out.println("Press any key to continue...");
-        System.in.read();
     }
     //-------------------------------------------
 

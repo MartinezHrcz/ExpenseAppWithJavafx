@@ -1,5 +1,6 @@
 package UI;
 
+import Application.Classes.ListIncomeExpenses;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,20 +12,20 @@ import javafx.scene.control.TextFormatter;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.scene.control.TextInputControl;
-
+import javafx.scene.control.TextField;
 import java.awt.*;
 import java.io.IOException;
 
 public class IncomeController {
-
+    //Boxes on the
     @FXML
-    private TextField Name;
+    public TextField NameBox;
     @FXML
-    private TextField Amount;
+    private TextField AmountBox;
     @FXML
-    private TextField Description;
+    private TextField DescBox;
     @FXML
-    private TextField Date;
+    private TextField DateBox;
 
     public void AddIncomeMenu(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(IncomeController.class.getResource("IncomeMenuSub/IncomeAdder.fxml"));
@@ -49,8 +50,23 @@ public class IncomeController {
         }
     }
 
-    public void AddIncomePress(ActionEvent actionEvent) {
-        Scene p = StartUI.window.getScene();
+    public void AddIncomePress() {
+        String name = NameBox.getText();
+        String description = DescBox.getText();
+        String date = DateBox.getText();
+        try{
+            double amount = Double.parseDouble(AmountBox.getText());
+            if (ListIncomeExpenses.AddtoIncomeList(name,amount,description,date)){
+                ListIncomeExpenses.ListIncomeList(true);
+            }
+        }
+        catch (NumberFormatException e){
+            System.out.println("no");
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
 }

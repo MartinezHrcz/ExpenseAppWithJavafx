@@ -73,7 +73,7 @@ public class IncomeMenu {
     }
     //Adding income
     private static void AddIncome() throws IOException {
-        ListIncomeExpenses.AddtoIncomeList();
+        //ListIncomeExpenses.AddtoIncomeList();
     }
     //Removing Income
     private static void RemoveIncome() throws IOException {
