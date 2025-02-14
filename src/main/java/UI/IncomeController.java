@@ -63,7 +63,7 @@ public class IncomeController{
             }
         }
         catch (NumberFormatException e){
-            ExceptionController.main("ghjk","sdfs");
+            ExceptionController.main("Invalid number error","The input amount wasn't a number, or it was invalid.");
 
         } catch (IOException e) {
             throw new RuntimeException(e);
