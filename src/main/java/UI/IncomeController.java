@@ -1,6 +1,8 @@
 package UI;
 
 import Application.Classes.ListIncomeExpenses;
+import UI.ExceptionControllers.ExceptionController;
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +18,7 @@ import javafx.scene.control.TextField;
 import java.awt.*;
 import java.io.IOException;
 
-public class IncomeController {
+public class IncomeController{
     //Boxes on the
     @FXML
     public TextField NameBox;
@@ -50,7 +52,7 @@ public class IncomeController {
         }
     }
 
-    public void AddIncomePress() {
+    public void AddIncomePress() throws IOException {
         String name = NameBox.getText();
         String description = DescBox.getText();
         String date = DateBox.getText();
@@ -61,7 +63,7 @@ public class IncomeController {
             }
         }
         catch (NumberFormatException e){
-            System.out.println("no");
+            ExceptionController.main("ghjk","sdfs");
 
         } catch (IOException e) {
             throw new RuntimeException(e);

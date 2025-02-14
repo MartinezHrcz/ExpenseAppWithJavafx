@@ -4,8 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.scene.paint.Color;
-import javafx.scene.image.Image;
 import java.io.IOException;
 
 public class StartUI extends Application {
