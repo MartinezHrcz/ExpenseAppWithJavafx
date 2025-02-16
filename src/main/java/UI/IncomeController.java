@@ -2,20 +2,11 @@ package UI;
 
 import Application.Classes.ListIncomeExpenses;
 import UI.ExceptionControllers.ExceptionController;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.Node;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.control.TextFormatter;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
-import javafx.scene.control.TextInputControl;
 import javafx.scene.control.TextField;
-import java.awt.*;
 import java.io.IOException;
 
 public class IncomeController{
