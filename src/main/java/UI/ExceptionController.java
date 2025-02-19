@@ -1,11 +1,11 @@
-package UI.ExceptionControllers;
+package UI;
 
-import UI.StartUI;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 
 public class ExceptionController {
@@ -17,20 +17,22 @@ public class ExceptionController {
     private static String desc;
 
     public static Stage exceptionStage;
-
+    //To do make this prettier and add documentation
     public static void show() throws IOException {
-        exceptionStage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(ExceptionController.class.getResource("Error.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        FXMLLoader fxmlLoader = new FXMLLoader(StartUI.class.getResource("Error.fxml"));
+
+        Scene scene; exceptionStage = new Stage();
+        scene = new Scene(fxmlLoader.load(), 600, 400);
+        exceptionStage.setScene(scene);
+        exceptionStage.setAlwaysOnTop(true);
+        StartUI.window.hide();
         exceptionStage.setResizable(false);
-        //exceptionStage.setScene(scene);
-        //exceptionStage.setAlwaysOnTop(true);
-        //StartUI.window.hide();
+        exceptionStage.show();
+        exceptionStage.setTitle("Error!");
+        ExceptionName.setText(name);
+        ExceptionDesc.setText(desc);
 
-        //ExceptionName.setText("NO");
-        //ExceptionDesc.setText(desc);
 
-        //exceptionStage.show();
     }
 
     public void Close() {

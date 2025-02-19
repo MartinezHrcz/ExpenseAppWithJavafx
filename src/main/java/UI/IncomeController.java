@@ -1,7 +1,6 @@
 package UI;
 
 import Application.Classes.ListIncomeExpenses;
-import UI.ExceptionControllers.ExceptionController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -55,7 +54,6 @@ public class IncomeController{
         }
         catch (NumberFormatException e){
             ExceptionController.main("Invalid number error","The input amount wasn't a number, or it was invalid.");
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
