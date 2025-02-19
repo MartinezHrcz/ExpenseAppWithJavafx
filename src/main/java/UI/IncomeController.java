@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 
 public class IncomeController{
-    //Boxes on the
+    //Boxes on the sceen
     @FXML
     public TextField NameBox;
     @FXML
@@ -53,9 +53,9 @@ public class IncomeController{
             }
         }
         catch (NumberFormatException e){
-            ExceptionController.main("Invalid number error","The input amount wasn't a number, or it was invalid.");
+            ExceptionController.ShowErrorWindow("Invalid number error","The input amount wasn't a number, or it was invalid.");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            ExceptionController.ShowErrorWindow("IOException error","The program has ran into a problem!");
         }
 
 
