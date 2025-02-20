@@ -41,7 +41,7 @@ public class ExceptionController {
 
     @FXML
     private static void SetExceptionData(){
-
+        //Doesn't work yet
         //sets the Text on the scene to the name of the error
         //ExceptionName.setText("hjskdf");
         //sets the explanation for the error

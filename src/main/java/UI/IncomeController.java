@@ -1,17 +1,31 @@
 package UI;
 
+import Application.Classes.Income;
 import Application.Classes.ListIncomeExpenses;
+import javafx.beans.InvalidationListener;
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 public class IncomeController{
     //Boxes on the sceen
     @FXML
     public TextField NameBox;
+    public Text IncomeList_Text;
+    public ListView Income_List;
     @FXML
     private TextField AmountBox;
     @FXML
@@ -50,6 +64,8 @@ public class IncomeController{
             double amount = Double.parseDouble(AmountBox.getText());
             if (ListIncomeExpenses.AddtoIncomeList(name,amount,description,date)){
                 ListIncomeExpenses.ListIncomeList(true);
+                StartUI.IncomeLoad();
+                updateIncome();
             }
         }
         catch (NumberFormatException e){
@@ -57,7 +73,10 @@ public class IncomeController{
         } catch (IOException e) {
             ExceptionController.ShowErrorWindow("IOException error","The program has ran into a problem!");
         }
+    }
+    public void updateIncome() throws IOException {
+        ObservableList<Income> list = FXCollections.observableList(ListIncomeExpenses.IncomeList.stream().toList());
 
-
+        //Income_List.setItems(list);
     }
 }
