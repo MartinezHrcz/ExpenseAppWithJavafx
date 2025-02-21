@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+
 public class StartUI extends Application {
     public static Stage window;
     //Loads in the main menu when the applications is started
