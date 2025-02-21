@@ -25,7 +25,7 @@ public class IncomeController{
     @FXML
     public TextField NameBox;
     public Text IncomeList_Text;
-    public ListView Income_List;
+    public ListView<String> Income_List;
     @FXML
     private TextField AmountBox;
     @FXML
@@ -33,13 +33,14 @@ public class IncomeController{
     @FXML
     private TextField DateBox;
 
-    public void AddIncomeMenu(ActionEvent actionEvent) throws IOException {
+    //Loads the menu for adding income sources
+    public void AddIncomeMenu() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(IncomeController.class.getResource("IncomeMenuSub/IncomeAdder.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         StartUI.window.setTitle("Add Income");
         StartUI.window.setScene(scene);
     }
-
+    //Gets called on the back arrow button
     public void BackToIncomeMenu(ActionEvent actionEvent) {
         try {
             StartUI.IncomeLoad();
@@ -47,8 +48,8 @@ public class IncomeController{
             throw new RuntimeException(e);
         }
     }
-
-    public void BackToMainMenu(ActionEvent actionEvent) {
+    //Loads back to the main menu
+    public void BackToMainMenu() {
         try {
             StartUI.BackToMain();
         } catch (IOException e) {
@@ -56,10 +57,12 @@ public class IncomeController{
         }
     }
 
+    //Retrives data from the income adder and creates the income object
     public void AddIncomePress() throws IOException {
         String name = NameBox.getText();
         String description = DescBox.getText();
         String date = DateBox.getText();
+        //Error handling for the amount box
         try{
             double amount = Double.parseDouble(AmountBox.getText());
             if (ListIncomeExpenses.AddtoIncomeList(name,amount,description,date)){
@@ -74,6 +77,8 @@ public class IncomeController{
             ExceptionController.ShowErrorWindow("IOException error","The program has ran into a problem!");
         }
     }
+
+    //Updates the Income list node on the income menu
     public void updateIncome() throws IOException {
         ObservableList<Income> list = FXCollections.observableList(ListIncomeExpenses.IncomeList.stream().toList());
 
