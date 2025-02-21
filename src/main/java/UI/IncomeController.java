@@ -6,6 +6,7 @@ import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import javafx.collections.ObservableListBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,10 +15,11 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
+import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
 import java.util.ListIterator;
 
 public class IncomeController{
@@ -25,7 +27,6 @@ public class IncomeController{
     @FXML
     public TextField NameBox;
     public Text IncomeList_Text;
-    public ListView<String> Income_List;
     @FXML
     private TextField AmountBox;
     @FXML
@@ -80,8 +81,14 @@ public class IncomeController{
 
     //Updates the Income list node on the income menu
     public void updateIncome() throws IOException {
-        ObservableList<Income> list = FXCollections.observableList(ListIncomeExpenses.IncomeList.stream().toList());
+        ArrayList<String> list = new ArrayList<>();
 
-        //Income_List.setItems(list);
+        ListIncomeExpenses.IncomeList.forEach(x-> {
+            list.add(x.toString());
+        });
+    }
+
+    public void DeleteIncomeMenu(ActionEvent actionEvent) {
+
     }
 }
