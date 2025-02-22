@@ -43,24 +43,16 @@ public class IncomeController implements Initializable {
         }
     }
 
-    //Updates the Income list node on the income menu
-    public void updateIncome() {
-        ArrayList<String> list = new ArrayList<>();
-        ListIncomeExpenses.IncomeList.forEach(x-> {
-            list.add(x.toString());
-        });
-        //  ObservableList<String> observableList = FXCollections.observableList(list);
-        //ObservableList<String> observableList2 = FXCollections.observableList();
-       // Income_List.setItems(FXCollections.observableArrayList( "Julia", "Ian", "Sue", "Matthew", "Hannah", "Stephan", "Denise"));
-    }
-
     public void DeleteIncomeMenu() {
 
     }
 
-    String[] xyz = {"ds","dsf",""};
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-       // Income_List.getItems().setAll(xyz);
+        ArrayList<String> list = new ArrayList<>();
+        ListIncomeExpenses.IncomeList.forEach(x-> {
+            list.add(x.toString());
+        });
+        Income_List.getItems().setAll(list);
     }
 }
