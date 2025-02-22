@@ -1,5 +1,7 @@
 package Application.Classes;
 
+import UI.ExceptionController;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,37 +40,19 @@ public class ListIncomeExpenses {
     }
 
     //Removes specified Income from IncomeList
-    public static void RemoveFromIncomeList() throws IOException {
+    public static void RemoveFromIncomeList(Income deleteIncome) {
         //Precheck if Incomelist is empty
         if (IncomeList.isEmpty()) {
-            System.out.println("Nothing to remove");
+            try {
+                ExceptionController.ShowErrorWindow("","");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             return;
         }
 
-        int index = 0;
-        //Listsincome list but only it's name
-        //Just prints out on the console
-        for (Income i : IncomeList) {
-            index++;
-            System.out.println(index + "." +i.getNameOfIncome());
-        }
-
-        Scanner userDeleteSC = new Scanner(System.in);
-        String input;
-        int inputInt = 0; //for the list.get
-        //User input of which index to delete
-        do{
-            try{
-                input = userDeleteSC.nextLine();
-                inputInt = Integer.parseInt(input);
-            }
-            catch(NumberFormatException e){
-                System.out.println("Invalid input, please try again!");
-            }
-        }
-        while (inputInt < 1 || inputInt > IncomeList.size());
         //Removes the selected object
-        IncomeList.remove(IncomeList.get(inputInt-1));
+        IncomeList.remove(deleteIncome);
     }
 
     //Prints IncomeList to console

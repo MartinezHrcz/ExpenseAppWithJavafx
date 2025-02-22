@@ -2,26 +2,21 @@ package UI;
 
 import Application.Classes.Income;
 import Application.Classes.ListIncomeExpenses;
-import javafx.collections.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
-
-import javafx.collections.FXCollections;
 
 public class IncomeController implements Initializable {
     @FXML
-    public ListView<String> Income_List;
+    public ListView<Income> Income_List;
     //Boxes on the sceen
     @FXML
     public Text IncomeList_Text;
@@ -43,16 +38,15 @@ public class IncomeController implements Initializable {
         }
     }
 
-    public void DeleteIncomeMenu() {
-
+    //Deletes the selected income source from the list
+    public void DeleteSelectedIncome() {
+        ListIncomeExpenses.RemoveFromIncomeList(Income_List.getSelectionModel().getSelectedItem());
+        Income_List.getItems().remove(Income_List.getSelectionModel().getSelectedIndex());
     }
 
+    //When the menu is initalized, it ensures that the listview is updated to reflect the current state of the
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ArrayList<String> list = new ArrayList<>();
-        ListIncomeExpenses.IncomeList.forEach(x-> {
-            list.add(x.toString());
-        });
-        Income_List.getItems().setAll(list);
+        Income_List.getItems().setAll(ListIncomeExpenses.IncomeList);
     }
 }

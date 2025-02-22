@@ -9,7 +9,7 @@
    <children>
       <Button fx:id="BackToMain_Btn" layoutX="549.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackToMainMenu" text="&lt;--" />
       <Button fx:id="AddIncome_Btn" layoutX="224.0" layoutY="78.0" mnemonicParsing="false" onAction="#AddIncomeMenu" prefHeight="26.0" prefWidth="151.0" text="ADD INCOME SOURCE" />
-      <Button fx:id="DeleteIncome_Btn" layoutX="224.0" layoutY="116.0" mnemonicParsing="false" onAction="#DeleteIncomeMenu" text="DELETE INCOME SOURCE" />
+      <Button fx:id="DeleteIncome_Btn" layoutX="224.0" layoutY="116.0" mnemonicParsing="false" onAction="#DeleteSelectedIncome" text="DELETE INCOME SOURCE" />
       <Text fx:id="IncomeList_Text" layoutX="14.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ALL INCOME SOURCES" wrappingWidth="164.5367431640625" />
       <ListView fx:id="Income_List" layoutX="13.0" layoutY="186.0" prefHeight="200.0" prefWidth="569.0"/>
    </children>

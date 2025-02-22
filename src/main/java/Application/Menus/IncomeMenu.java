@@ -77,7 +77,7 @@ public class IncomeMenu {
     }
     //Removing Income
     private static void RemoveIncome() throws IOException {
-        ListIncomeExpenses.RemoveFromIncomeList();
+        //ListIncomeExpenses.RemoveFromIncomeList();
     }
     //just lists the incomes
     private static void ShowIncome(boolean detail) throws IOException {
