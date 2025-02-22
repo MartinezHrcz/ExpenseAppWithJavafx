@@ -74,14 +74,14 @@ public class ExpensesMenu {
     }
     //Adding income
     private static void AddExpense() throws IOException {
-        ListIncomeExpenses.AddtoExpensesList();
+        //ListIncomeExpenses.AddtoExpensesList();
     }
     //Removing Income
     private static void RemoveExpense() throws IOException {
-        ListIncomeExpenses.RemoveFromExpensesList();
+        //ListIncomeExpenses.RemoveFromExpensesList();
     }
     //just lists the incomes
     private static void ShowExpense(boolean detail) throws IOException {
-        ListIncomeExpenses.ListExpensesList(detail);
+        //ListIncomeExpenses.ListExpensesList(detail);
     }
 }

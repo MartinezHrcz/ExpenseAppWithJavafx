@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
     /*
     |---------------------------|
@@ -116,4 +117,20 @@ public class ListIncomeExpenses {
         System.in.read();
     }
     //--------------------------------------------
+
+    public static double IncomeSum(){
+        double sum = 0;
+        for (Income income : IncomeList){
+            sum += income.getIncomeAmount();
+        }
+        return sum;
+    }
+
+    public static double ExpenseSum() {
+        double sum = 0;
+        for (Expenses expense : ExpensesList){
+            sum += expense.getAmount();
+        }
+        return sum;
+    }
 }
