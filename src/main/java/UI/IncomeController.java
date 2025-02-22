@@ -39,11 +39,14 @@ public class IncomeController implements Initializable {
     }
 
     //Deletes the selected income source from the list
-    public void DeleteSelectedIncome() {
+    public boolean DeleteSelectedIncome() {
+        //Prechecks if an income is selected
+        if (Income_List.getSelectionModel().getSelectedItem() == null) {return false;}
         //Removes the item from the business logic list
         ListIncomeExpenses.RemoveFromIncomeList(Income_List.getSelectionModel().getSelectedItem());
         //Removes item from only the list view
         Income_List.getItems().remove(Income_List.getSelectionModel().getSelectedIndex());
+        return true;
     }
 
     //When the menu is initalized, it ensures that the listview is updated to reflect the current state of the

@@ -34,7 +34,7 @@ public class ExpenseAddingController {
         String name = NameBox.getText();
         String description = DescBox.getText();
         String date = DateBox.getText();
-        boolean essential = EssentialCheck.isPressed();
+        boolean essential = EssentialCheck.isSelected();
         boolean checked = CheckedBox.isSelected();
         //Error handling for the amount box
         try{
