@@ -43,13 +43,12 @@ public class Income {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("");
-        sb.append("Name=").append(nameOfIncome).append('\n');
-        sb.append("Amount=").append(incomeAmount).append('\n');
-        sb.append("Description='").append(desc).append('\n');
+        sb.append("Name=").append(nameOfIncome).append(" | ");
+        sb.append("Amount=").append(incomeAmount).append(" | ");
+        sb.append("Description='").append(desc).append(" | ");
         //Tenary for checking if an income source is reoccuring
-        sb.append("dateOfrecurrence=")
-                .append(((Integer)dateOfrecurrenceDay == null || dateOfrecurrenceDay == 0) ? "Doesn't reoccur" : dateOfrecurrenceDay)
-                .append('\n');
+        sb.append("Reoccurence=")
+                .append(((Integer)dateOfrecurrenceDay == null || dateOfrecurrenceDay == 0) ? "Doesn't reoccur" : dateOfrecurrenceDay);
         return sb.toString();
     }
 }

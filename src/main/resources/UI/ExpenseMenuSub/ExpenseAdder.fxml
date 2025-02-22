@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ExpenseAddingController">
+
+
+    <Button id="BackToIncome_Btn" layoutX="551.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackToExpenseMenu" text="&lt;--" />
+    <TextField fx:id="NameBox" layoutX="15.0" layoutY="65.0" />
+    <TextField fx:id="AmountBox" layoutX="15.0" layoutY="100.0" />
+    <TextField fx:id="DescBox" layoutX="15.0" layoutY="135.0" />
+    <TextField fx:id="DateBox" layoutX="15.0" layoutY="170.0" />
+    <Text layoutX="173.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+    <Text layoutX="173.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount" />
+    <Text layoutX="173.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Short description" />
+    <Text layoutX="173.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of recurrence" />
+    <Button id="AddNewIncome_Btn" layoutX="15.0" layoutY="218.0" mnemonicParsing="false" onAction="#AddExpensePress" prefHeight="26.0" prefWidth="150.0" text="ADD" />
+   <CheckBox fx:id="EssentialCheck" layoutX="322.0" layoutY="69.0" mnemonicParsing="false" text="Essential" />
+   <CheckBox fx:id="CheckedBox" layoutX="322.0" layoutY="104.0" mnemonicParsing="false" text="Already Paid" />
+
+
+</AnchorPane>
