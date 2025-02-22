@@ -1,10 +1,10 @@
 package UI;
 
-import Application.Classes.Income;
+import Application.Classes.Expenses;
+
 import Application.Classes.ListIncomeExpenses;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
@@ -14,18 +14,18 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class IncomeController implements Initializable {
+public class ExpenseControler implements Initializable {
     //scene objects
     @FXML
-    public ListView<Income> Income_List;
+    public ListView<Expenses> Expense_List;
     @FXML
-    public Text IncomeList_Text;
+    public Text ExpenseList_Text;
 
     //Loads the menu for adding income sources
-    public void AddIncomeMenu() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(IncomeController.class.getResource("IncomeMenuSub/IncomeAdder.fxml"));
+    public void AddExpenseMenu() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(ExpenseControler.class.getResource("ExpenseMenuSub/ExpenseAdder.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        StartUI.window.setTitle("Add Income");
+        StartUI.window.setTitle("Add Expense");
         StartUI.window.setScene(scene);
     }
 
@@ -39,17 +39,18 @@ public class IncomeController implements Initializable {
     }
 
     //Deletes the selected income source from the list
-    public void DeleteSelectedIncome() {
+    public void DeleteSelectedExpense() {
         //Removes the item from the business logic list
-        ListIncomeExpenses.RemoveFromIncomeList(Income_List.getSelectionModel().getSelectedItem());
+        ListIncomeExpenses.RemoveFromExpensesList(Expense_List.getSelectionModel().getSelectedItem());
         //Removes item from only the list view
-        Income_List.getItems().remove(Income_List.getSelectionModel().getSelectedIndex());
+        Expense_List.getItems().remove(Expense_List.getSelectionModel().getSelectedIndex());
     }
 
-    //When the menu is initalized, it ensures that the listview is updated to reflect the current state of the
+    //When the menu is initalized, it ensures that the listview is updated
+    // to reflect the current state of the stored data
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //loads in the income sources
-        Income_List.getItems().setAll(ListIncomeExpenses.IncomeList);
+        Expense_List.getItems().setAll(ListIncomeExpenses.ExpensesList);
     }
 }

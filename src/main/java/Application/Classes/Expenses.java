@@ -31,7 +31,7 @@ public class Expenses {
         this.Checked = false;
     }
     //Constructor without reoccurence
-    public Expenses(String Name, String Desc, double Amount, boolean Essential) {
+    public Expenses(String Name, String Desc, double Amount, boolean Essential, boolean checked) {
         this.Name = Name;
         this.Desc = Desc;
         this.Amount = Amount;
