@@ -35,5 +35,6 @@ public class FinancesController implements Initializable {
     }
 
     public void NetSalPress() {
+        Bar_Chart.setVisible(false);
     }
 }
