@@ -26,16 +26,16 @@ public class ListIncomeExpenses {
     //Income methods:
 
     //Adds value to Income list
-    public static boolean AddtoIncomeList(String name, double amount, String desc, String Date) {
+    public static boolean AddtoIncomeList(String name, double amount, String desc, int Date) {
         Income i;
         //Precheck
         name = name.trim();
         desc = desc.trim();
 
-        if (name.length() == 0 || amount<0 || Date.length() == 0){
+        if (name.length() == 0 || amount<0 || (Date < 0 || Date > 30)){
             return false;
         }
-        i = new Income(name, amount, desc);
+        i = new Income(name, amount,desc, Date);
         IncomeList.add(i);
         return true;
     }
@@ -89,7 +89,7 @@ public class ListIncomeExpenses {
         //Precheck if ExpensesList is empty
         if (ExpensesList.isEmpty()) {
             try {
-                ExceptionController.ShowErrorWindow("","");
+                ExceptionController.ShowErrorWindow("", "");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -97,26 +97,6 @@ public class ListIncomeExpenses {
         }
         ExpensesList.remove(deleteExpense);
     }
-
-    //Prints ExpensesList to console
-    public static void ListExpensesList(boolean detailed) throws IOException {
-        int index = 0;
-        for (Expenses expense : ExpensesList) {
-            index++;
-            //detail levels:
-            //1.Everything is listed
-            //2.Only name and amount
-            if (detailed == true) {
-                System.out.println(index + ". " + expense.toString());
-            }
-            else {
-                System.out.println(index + ". " + expense.getName() + ": " + expense.getAmount());
-            }
-        }
-        System.out.println("Press any key to continue...");
-        System.in.read();
-    }
-    //--------------------------------------------
 
     public static double IncomeSum(){
         double sum = 0;
@@ -132,5 +112,9 @@ public class ListIncomeExpenses {
             sum += expense.getAmount();
         }
         return sum;
+    }
+
+    public static double RemainingFunds() {
+        return IncomeSum() - ExpenseSum();
     }
 }

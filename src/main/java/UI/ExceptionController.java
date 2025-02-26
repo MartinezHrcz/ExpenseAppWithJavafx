@@ -3,14 +3,19 @@ package UI;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
-public class ExceptionController {
+public class ExceptionController implements Initializable {
     //Name of the error
     @FXML
     public static Label ExceptionName;
@@ -20,25 +25,8 @@ public class ExceptionController {
     public static Label ExceptionDesc;
     private static String desc;
     //stage for the exception window
-    private static Stage exceptionStage;
-    //To do make this prettier and add documentation
-    @FXML
-    private static void Show() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(StartUI.class.getResource("Error.fxml"));
 
-        Scene scene;
-        exceptionStage = new Stage();
-        scene = new Scene(fxmlLoader.load(), 600, 400);
-        exceptionStage.setScene(scene);
-        exceptionStage.setAlwaysOnTop(true);
-        //hides the main window
-        StartUI.window.hide();
-        exceptionStage.setResizable(false);
-        //shows the new error pop up
-        exceptionStage.show();
-        SetExceptionData();
-        exceptionStage.setTitle("Error!");
-    }
+    //To do make this prettier and add documentation
 
     @FXML
     private static void SetExceptionData(){
@@ -54,12 +42,20 @@ public class ExceptionController {
     @FXML
     private void Close() {
         StartUI.window.show();
-        exceptionStage.close();
+        StartUI.exceptionStage.close();
     }
     //This is the entry point of the class
     public static void ShowErrorWindow(String Name, String Desc) throws IOException {
         name = Name;
         desc = Desc;
-        Show();
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println("Initializing");
+        //System.out.println(ExceptionDesc.getLabelFor());
+        //ExceptionDesc.setText(desc);
+
     }
 }

@@ -9,7 +9,7 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FinancesController">
       <Button fx:id="BackToMain_Btn" layoutX="549.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackToMainMenu" text="&lt;--" />
       <Button id="AddNewIncome_Btn" fx:id="NetSal_Calc" layoutX="212.0" layoutY="74.0" mnemonicParsing="false" onAction="#NetSalPress" prefHeight="26.0" prefWidth="176.0" text="NET SALARY CALCULATOR" />
-   <BarChart fx:id="Bar_Chart" layoutX="23.0" layoutY="127.0" prefHeight="258.0" prefWidth="554.0">
+   <BarChart fx:id="Bar_Chart" layoutX="14.0" layoutY="116.0" prefHeight="258.0" prefWidth="554.0">
      <xAxis>
        <CategoryAxis side="BOTTOM" />
      </xAxis>
