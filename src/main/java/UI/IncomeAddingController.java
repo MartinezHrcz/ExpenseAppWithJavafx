@@ -31,18 +31,18 @@ public class IncomeAddingController {
     public void AddIncomePress() throws IOException {
         String name = NameBox.getText();
         String description = DescBox.getText();
-        String date = DateBox.getText();
+
         //Error handling for the amount box
         try{
             double amount = Double.parseDouble(AmountBox.getText());
+            int date = Integer.parseInt(DateBox.getText());
             if (ListIncomeExpenses.AddtoIncomeList(name,amount,description,date)){
                 //ListIncomeExpenses.ListIncomeList(true);
                 BackToIncomeMenu();
-
             }
         }
         catch (NumberFormatException e) {
-            ExceptionController.ShowErrorWindow("Invalid number error", "The input amount wasn't a number, or it was invalid.");
+            StartUI.ERR("Invalid number error", "The input amount wasn't a number, or it was invalid.");
         }
     }
 }

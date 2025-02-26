@@ -27,14 +27,14 @@ public class FinancesController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         XYChart.Series<String, Double> I = new XYChart.Series<>();
         I.setName("Income");
-        I.getData().add(new XYChart.Data<>("Income", ListIncomeExpenses.IncomeSum()));
+        I.getData().add(new XYChart.Data<>("Income "+ ListIncomeExpenses.IncomeSum() + "$", ListIncomeExpenses.IncomeSum()));
         XYChart.Series<String, Double> E = new XYChart.Series<>();
         E.setName("Expense");
-        E.getData().add(new XYChart.Data<>("Expense", ListIncomeExpenses.ExpenseSum()));
+        E.getData().add(new XYChart.Data<>("Expense "+ ListIncomeExpenses.ExpenseSum() + "$", ListIncomeExpenses.ExpenseSum()));
         Bar_Chart.getData().addAll(I,E);
     }
 
     public void NetSalPress() {
-        Bar_Chart.setVisible(false);
+
     }
 }

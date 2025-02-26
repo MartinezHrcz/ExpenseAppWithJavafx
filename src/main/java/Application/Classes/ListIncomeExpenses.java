@@ -26,16 +26,16 @@ public class ListIncomeExpenses {
     //Income methods:
 
     //Adds value to Income list
-    public static boolean AddtoIncomeList(String name, double amount, String desc, String Date) {
+    public static boolean AddtoIncomeList(String name, double amount, String desc, int Date) {
         Income i;
         //Precheck
         name = name.trim();
         desc = desc.trim();
 
-        if (name.length() == 0 || amount<0 || Date.length() == 0){
+        if (name.length() == 0 || amount<0 || (Date < 0 || Date > 30)){
             return false;
         }
-        i = new Income(name, amount, desc);
+        i = new Income(name, amount,desc, Date);
         IncomeList.add(i);
         return true;
     }
