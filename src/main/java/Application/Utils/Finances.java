@@ -30,22 +30,11 @@ public class Finances {
         return funds;
     }
 
-    public static double AfterTaxAmount(){
-        double funds = 0;
-        Scanner userInputSC = new Scanner(System.in);
-        System.out.print("Kérem adja meg a bruttó fizetését: ");
-        do {
-            try{
-                funds = Double.parseDouble(userInputSC.nextLine());
-            }
-            catch (NumberFormatException e){
-                System.out.println("Not a valid number!");
-                funds = 0;
-            }
-        }
-        while (funds <= 0);
-        System.out.print("Bruttó fizetés: ");
-        return funds*0.665;
+    public static float[] AfterTaxAmount(float grossSalary, boolean under25){
+        float incomeTax = (float) (grossSalary * 0.15);
+        float socialSecurity = (float) (grossSalary * 0.185);
+        // returns net salary, incomeTax and social security tax
+        return new float[]{grossSalary - (incomeTax + socialSecurity), incomeTax, socialSecurity};
     }
 
     public static double AfaCalculation(){
