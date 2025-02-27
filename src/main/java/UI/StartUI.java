@@ -77,6 +77,13 @@ public class StartUI extends Application {
         exceptionStage.setTitle("Error!");
     }
 
+    public static void NetSalLoad() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(StartUI.class.getResource("NetSal.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        window.setTitle("Net Salary Calculator");
+        window.setScene(scene);
+    }
+
     public static void main(String[] args) {
         launch();
     }

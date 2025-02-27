@@ -9,6 +9,8 @@ import java.util.Scanner;
 
 public class FinancesMenu {
 
+
+
     private final static String[] MENU_ITEMS = {
             "Maradék megtekintése",
             "Teljes bevétel",
@@ -31,12 +33,12 @@ public class FinancesMenu {
             //get input
             input = userInputSC.nextLine();
             if (!input.trim().equalsIgnoreCase("exit")) {
-                Redirecting(input.trim());
+       //         Redirecting(input.trim());
             }
         }
     }
 
-    private static void Redirecting(String input) {
+    /*private static void Redirecting(String input) {
         int inputInt = 0;
         //Precheck
         //Checks if the input is blank
@@ -94,5 +96,5 @@ public class FinancesMenu {
                    }
                    break;
         }
-    }
+    }*/
 }

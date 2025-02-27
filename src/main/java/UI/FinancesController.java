@@ -35,6 +35,10 @@ public class FinancesController implements Initializable {
     }
 
     public void NetSalPress() {
-
+        try {
+            StartUI.NetSalLoad();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
