@@ -5,11 +5,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class StartUI extends Application {
     public static Stage window;
     public static Stage exceptionStage;
+
+    private static Map<String,String> Menus = Map.ofEntries(
+            Map.entry("Main", "home-ui.fxml"),
+            Map.entry("Income", "MainMenus/Income.fxml"),
+            Map.entry("Expenses", "MainMenus/Expense.fxml"),
+            Map.entry("Finances", "MainMenus/Finances.fxml"),
+            Map.entry("Net Salary Calculator", "FinanceMenuSub/NetSal.fxml")
+    );
     //Loads in the main menu when the applications is started
     @Override
     public void start(Stage stage) throws IOException {
@@ -24,7 +34,7 @@ public class StartUI extends Application {
 
     //Used to load in Income menu
     public static void IncomeLoad() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(StartUI.class.getResource("Income.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(StartUI.class.getResource("MainMenus/Income.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         window.setTitle("Income");
         window.setScene(scene);
