@@ -1,7 +1,6 @@
 package UI;
 
-import Application.Classes.Income;
-import Application.Classes.ListIncomeExpenses;
+import Application.Utils.IncomeListUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
@@ -36,8 +35,7 @@ public class IncomeAddingController {
         try{
             double amount = Double.parseDouble(AmountBox.getText());
             int date = Integer.parseInt(DateBox.getText());
-            if (ListIncomeExpenses.AddtoIncomeList(name,amount,description,date)){
-                //ListIncomeExpenses.ListIncomeList(true);
+            if (IncomeListUtils.AddtoList(name,amount,description,date,false,false)){
                 BackToIncomeMenu();
             }
         }

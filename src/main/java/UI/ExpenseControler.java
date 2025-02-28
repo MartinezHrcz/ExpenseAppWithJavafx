@@ -2,7 +2,7 @@ package UI;
 
 import Application.Classes.Expenses;
 
-import Application.Classes.ListIncomeExpenses;
+import Application.Utils.ExpenseListUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -41,7 +41,7 @@ public class ExpenseControler implements Initializable {
     //Deletes the selected income source from the list
     public void DeleteSelectedExpense() {
         //Removes the item from the business logic list
-        ListIncomeExpenses.RemoveFromExpensesList(Expense_List.getSelectionModel().getSelectedItem());
+        ExpenseListUtils.RemoveFromList(Expense_List.getSelectionModel().getSelectedItem());
         //Removes item from only the list view
         Expense_List.getItems().remove(Expense_List.getSelectionModel().getSelectedIndex());
     }
@@ -51,6 +51,6 @@ public class ExpenseControler implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //loads in the income sources
-        Expense_List.getItems().setAll(ListIncomeExpenses.ExpensesList);
+        Expense_List.getItems().setAll(ExpenseListUtils.ExpensesList);
     }
 }

@@ -2,7 +2,6 @@ package Application.Utils;
 
 import Application.Classes.Expenses;
 import Application.Classes.Income;
-import Application.Classes.ListIncomeExpenses;
 
 import java.util.Scanner;
 
@@ -11,11 +10,11 @@ public class Finances {
     public static double RemainingFunds(){
         double funds = 0;
 
-        for (Income i : ListIncomeExpenses.IncomeList){
+        for (Income i : IncomeListUtils.IncomeList){
             funds += i.getIncomeAmount();
         }
 
-        for (Expenses e : ListIncomeExpenses.ExpensesList){
+        for (Expenses e : ExpenseListUtils.ExpensesList){
             funds -= e.getAmount();
         }
 
@@ -24,7 +23,7 @@ public class Finances {
 
     public static double TotalFunds(){
         double funds = 0;
-        for (Income i : ListIncomeExpenses.IncomeList){
+        for (Income i : IncomeListUtils.IncomeList){
             funds += i.getIncomeAmount();
         }
         return funds;
@@ -33,7 +32,6 @@ public class Finances {
     public static float[] AfterTaxAmount(float grossSalary, boolean under25){
         float incomeTax = (float) (grossSalary * 0.15);
         float socialSecurity = (float) (grossSalary * 0.185);
-        // returns net salary, incomeTax and social security tax
         return new float[]{grossSalary - (incomeTax + socialSecurity), incomeTax, socialSecurity};
     }
 
@@ -70,5 +68,6 @@ public class Finances {
         System.out.print("Áfa nélkül: ");
         return price/afa;
     }
+
 
 }

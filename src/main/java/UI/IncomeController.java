@@ -1,7 +1,7 @@
 package UI;
 
 import Application.Classes.Income;
-import Application.Classes.ListIncomeExpenses;
+import Application.Utils.IncomeListUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
@@ -43,7 +43,7 @@ public class IncomeController implements Initializable {
         //Prechecks if an income is selected
         if (Income_List.getSelectionModel().getSelectedItem() == null) {return false;}
         //Removes the item from the business logic list
-        ListIncomeExpenses.RemoveFromIncomeList(Income_List.getSelectionModel().getSelectedItem());
+        IncomeListUtils.RemoveFromList(Income_List.getSelectionModel().getSelectedItem());
         //Removes item from only the list view
         Income_List.getItems().remove(Income_List.getSelectionModel().getSelectedIndex());
         return true;
@@ -53,6 +53,6 @@ public class IncomeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //loads in the income sources
-        Income_List.getItems().setAll(ListIncomeExpenses.IncomeList);
+        Income_List.getItems().setAll(IncomeListUtils.IncomeList);
     }
 }

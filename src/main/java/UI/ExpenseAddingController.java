@@ -1,6 +1,6 @@
 package UI;
 
-import Application.Classes.ListIncomeExpenses;
+import Application.Utils.ExpenseListUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
@@ -33,13 +33,13 @@ public class ExpenseAddingController {
     public void AddExpensePress() throws IOException {
         String name = NameBox.getText();
         String description = DescBox.getText();
-        String date = DateBox.getText();
+        int date = Integer.parseInt(DateBox.getText());
         boolean essential = EssentialCheck.isSelected();
         boolean checked = CheckedBox.isSelected();
         //Error handling for the amount box
         try{
             double amount = Double.parseDouble(AmountBox.getText());
-            if (ListIncomeExpenses.AddtoExpensesList(name,amount,description,essential,checked)){
+            if (ExpenseListUtils.AddtoList(name,amount,description, date ,essential,checked)){
                 //ListIncomeExpenses.ListIncomeList(true);
                 BackToExpenseMenu();
 
