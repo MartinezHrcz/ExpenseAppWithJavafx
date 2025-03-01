@@ -10,13 +10,13 @@ public class HomeController {
         Button bt = (Button) actionEvent.getSource();
         switch (bt.getId().toString()){
             case "Income_Btn":
-                UI.StartUI.IncomeLoad();
+                StartUI.FXMLLoad("Income");
                 break;
             case "Expenses_Btn":
-                UI.StartUI.ExpenseLoad();
+                StartUI.FXMLLoad("Expenses");
                 break;
             case "Finances_Btn":
-                UI.StartUI.FinancesLoad();
+                StartUI.FXMLLoad("Finances");
                 break;
         }
 

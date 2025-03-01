@@ -30,11 +30,7 @@ public class NetSalController implements Initializable {
     private StackedBarChart StackedBarChart;
 
     public void BackToMainMenu() {
-        try {
-            StartUI.FinancesLoad();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        StartUI.FXMLLoad("Finances");
     }
 
 

@@ -22,12 +22,7 @@ public class ExpenseAddingController {
     private CheckBox CheckedBox;
     //Gets called on the back arrow button
     public void BackToExpenseMenu() {
-        try {
-            StartUI.ExpenseLoad();
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        StartUI.FXMLLoad("Expenses");
     }
     //Retrives data from the income adder and creates the income object
     public void AddExpensePress() throws IOException {

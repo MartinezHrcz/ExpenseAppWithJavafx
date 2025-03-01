@@ -18,12 +18,7 @@ public class IncomeAddingController {
 
     //Gets called on the back arrow button
     public void BackToIncomeMenu() {
-        try {
-            StartUI.IncomeLoad();
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        StartUI.FXMLLoad("Income");
     }
 
     //Retrives data from the income adder and creates the income object

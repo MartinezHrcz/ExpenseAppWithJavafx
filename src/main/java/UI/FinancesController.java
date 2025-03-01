@@ -16,11 +16,7 @@ public class FinancesController implements Initializable {
     BarChart<String, Double> Bar_Chart;
 
     public void BackToMainMenu() {
-        try {
-            StartUI.BackToMain();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        StartUI.FXMLLoad("Main");
     }
 
     @Override
@@ -36,10 +32,6 @@ public class FinancesController implements Initializable {
     }
 
     public void NetSalPress() {
-        try {
-            StartUI.NetSalLoad();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        StartUI.FXMLLoad("Net Salary Calculator");
     }
 }

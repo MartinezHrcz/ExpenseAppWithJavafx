@@ -31,11 +31,7 @@ public class IncomeController implements Initializable {
 
     //Loads back to the main menu
     public void BackToMainMenu() {
-        try {
-            StartUI.BackToMain();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        StartUI.FXMLLoad("Main");
     }
 
     //Deletes the selected income source from the list
