@@ -26,11 +26,7 @@ public class StartUI extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         window = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(StartUI.class.getResource("home-ui.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        window.setTitle("ExpenseApp");
-        window.setResizable(false);
-        window.setScene(scene);
+        FXMLLoad("Main");
         window.show();
     }
 
