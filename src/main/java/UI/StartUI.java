@@ -13,18 +13,17 @@ public class StartUI extends Application {
     public static Stage window;
     //Window which shows the errors
     public static Stage exceptionStage;
-
-    private static Map<String,String> Menus = Map.ofEntries(
+    //Map used to store the name and location of the fxml files
+    private final static Map<String,String> Menus = Map.ofEntries(
             Map.entry("Main", "home-ui.fxml"),
             Map.entry("Income", "MainMenus/Income.fxml"),
             Map.entry("Expenses", "MainMenus/Expense.fxml"),
             Map.entry("Finances", "MainMenus/Finances.fxml"),
             Map.entry("Net Salary Calculator", "FinanceMenuSub/NetSal.fxml")
-
     );
-    //Loads in the main menu when the applications is started
+    //Loads in the main menu when the application is started
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) {
         window = stage;
         FXMLLoad("Main");
         window.show();
@@ -57,10 +56,10 @@ public class StartUI extends Application {
     }
 
     //Used to load in the menu fxml files
-    //This is the reworked method, before this every menu had it's own method
+    //This is the reworked method, before this every menu had its own method
     public static void FXMLLoad(String neededFXML){
         FXMLLoader fxmlLoader = new FXMLLoader(StartUI.class.getResource(Menus.get(neededFXML)));
-        Scene scene = null;
+        Scene scene;
         try {
             scene = new Scene(fxmlLoader.load());
         } catch (IOException e) {

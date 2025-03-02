@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 
 public class ExpenseAddingController {
+    //Controller used for the Income sub menu for adding new income sources
     @FXML
     public TextField NameBox;
     @FXML

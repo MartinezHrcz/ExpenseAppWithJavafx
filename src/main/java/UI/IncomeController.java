@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 public class IncomeController implements Initializable {
     //scene objects
     @FXML
@@ -45,7 +46,7 @@ public class IncomeController implements Initializable {
         return true;
     }
 
-    //When the menu is initalized, it ensures that the listview is updated to reflect the current state of the
+    //When the menu is initialized, it ensures that the listview is updated to reflect the current state of the
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //loads in the income sources

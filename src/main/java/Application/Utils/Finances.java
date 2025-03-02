@@ -1,36 +1,11 @@
 package Application.Utils;
-
-import Application.Classes.Expenses;
-import Application.Classes.Income;
-
 import java.util.Scanner;
 
 public class Finances {
-
-    public static double RemainingFunds(){
-        double funds = 0;
-
-        for (Income i : IncomeListUtils.IncomeList){
-            funds += i.getIncomeAmount();
-        }
-
-        for (Expenses e : ExpenseListUtils.ExpensesList){
-            funds -= e.getAmount();
-        }
-
-        return funds;
-    }
-
-    public static double TotalFunds(){
-        double funds = 0;
-        for (Income i : IncomeListUtils.IncomeList){
-            funds += i.getIncomeAmount();
-        }
-        return funds;
-    }
-
+    //Calculates the net salary from input
+    //Doesn't include incomeTax if the user is under 25
     public static float[] AfterTaxAmount(float grossSalary, boolean under25){
-        float incomeTax = (float) (grossSalary * 0.15);
+        float incomeTax = under25 ? 0: (float) (grossSalary * 0.15);
         float socialSecurity = (float) (grossSalary * 0.185);
         return new float[]{grossSalary - (incomeTax + socialSecurity), incomeTax, socialSecurity};
     }

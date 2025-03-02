@@ -14,11 +14,11 @@ import java.util.ResourceBundle;
 public class FinancesController implements Initializable {
     @FXML
     BarChart<String, Double> Bar_Chart;
-
+    //Returns back to the home screen
     public void BackToMainMenu() {
         StartUI.FXMLLoad("Main");
     }
-
+    //Initializes the data for the chart
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         XYChart.Series<String, Double> I = new XYChart.Series<>();
@@ -30,7 +30,7 @@ public class FinancesController implements Initializable {
         E.getData().add(new XYChart.Data<>("Expense "+ ExpenseListUtils.Sum() + "$", ExpenseListUtils.Sum()));
         Bar_Chart.getData().addAll(I,E);
     }
-
+    //Opens Net salary calculator menu
     public void NetSalPress() {
         StartUI.FXMLLoad("Net Salary Calculator");
     }

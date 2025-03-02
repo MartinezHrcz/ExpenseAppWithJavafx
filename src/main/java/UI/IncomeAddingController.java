@@ -21,7 +21,7 @@ public class IncomeAddingController {
         StartUI.FXMLLoad("Income");
     }
 
-    //Retrives data from the income adder and creates the income object
+    //Retrieves data from the income adder and creates the income object
     public void AddIncomePress() throws IOException {
         String name = NameBox.getText();
         String description = DescBox.getText();
@@ -30,7 +30,7 @@ public class IncomeAddingController {
         try{
             double amount = Double.parseDouble(AmountBox.getText());
             int date = Integer.parseInt(DateBox.getText());
-            if (IncomeListUtils.AddtoList(name,amount,description,date,false,false)){
+            if (IncomeListUtils.AddtoList(name,amount,description,date)){
                 BackToIncomeMenu();
             }
         }

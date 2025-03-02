@@ -15,6 +15,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ExpenseControler implements Initializable {
+    //used for the Expense menu
     //scene objects
     @FXML
     public ListView<Expenses> Expense_List;
@@ -46,7 +47,7 @@ public class ExpenseControler implements Initializable {
     // to reflect the current state of the stored data
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //loads in the income sources
+        //loads in the expense sources
         Expense_List.getItems().setAll(ExpenseListUtils.ExpensesList);
     }
 }

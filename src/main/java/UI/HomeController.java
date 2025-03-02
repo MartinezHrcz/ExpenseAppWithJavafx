@@ -1,14 +1,14 @@
 package UI;
 
-import java.awt.*;
-import java.io.IOException;
 import javafx.scene.control.Button;
 public class HomeController {
 
 
-    public void ButtonClicked(javafx.event.ActionEvent actionEvent) throws IOException {
+    public void ButtonClicked(javafx.event.ActionEvent actionEvent) {
+
         Button bt = (Button) actionEvent.getSource();
-        switch (bt.getId().toString()){
+        //When one of the menu choices is clicked this loads in the wanted menu
+        switch (bt.getId()){
             case "Income_Btn":
                 StartUI.FXMLLoad("Income");
                 break;
