@@ -1,6 +1,10 @@
 package UI;
 
+import Application.Utils.ExitProcedureUtil;
+import javafx.application.Application;
 import javafx.scene.control.Button;
+import org.controlsfx.tools.Utils;
+
 public class HomeController {
 
 
@@ -17,6 +21,9 @@ public class HomeController {
                 break;
             case "Finances_Btn":
                 StartUI.FXMLLoad("Finances");
+                break;
+            case "Quit":
+                ExitProcedureUtil.Start();
                 break;
         }
 

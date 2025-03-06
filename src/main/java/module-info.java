@@ -6,7 +6,7 @@ module hm.branchproject.expenseapp {
     requires com.dlsc.formsfx;
     requires net.synedra.validatorfx;
     requires org.kordamp.bootstrapfx.core;
-    requires java.desktop;
+    requires com.fasterxml.jackson.databind;
 
     opens UI to javafx.fxml;
     exports UI;

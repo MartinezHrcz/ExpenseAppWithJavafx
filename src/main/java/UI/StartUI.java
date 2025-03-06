@@ -65,6 +65,7 @@ public class StartUI extends Application {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        //scene.getStylesheets().add(String.valueOf(StartUI.class.getResource("General.css").toExternalForm()));
         window.setTitle(neededFXML);
         window.setScene(scene);
     }
