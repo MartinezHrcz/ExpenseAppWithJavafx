@@ -8,6 +8,8 @@ module hm.branchproject.expenseapp {
     requires org.kordamp.bootstrapfx.core;
     requires com.fasterxml.jackson.databind;
 
+    opens Application.Classes to com.fasterxml.jackson.databind;
+
     opens UI to javafx.fxml;
     exports UI;
 }

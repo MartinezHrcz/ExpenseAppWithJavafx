@@ -6,18 +6,16 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.time.LocalDate;
 
 public class Income {
-    @JsonProperty
     private String nameOfIncome;
-    @JsonProperty
     private double incomeAmount;
     //Description of the income source
-    @JsonProperty
     private String desc;
     //used if an income source is reoccuring
-    @JsonProperty
     private int dateOfrecurrenceDay = 0;
 
-    public Income() {}
+    public Income() {
+
+    }
 
     //Constructor for every variable
     public Income(String nameOfIncome, double incomeAmount, String desc, int date) {

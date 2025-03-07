@@ -1,8 +1,6 @@
 package Application.Utils;
-import Application.Classes.Income;
+import UI.StartUI;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.controlsfx.tools.Utils;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -16,24 +14,36 @@ public class ExitProcedureUtil {
 
     private static boolean SaveIncome(){
         File file = new File("src/main/appData/Income.json");
-        System.out.println(file.getAbsolutePath());
         ObjectMapper obm = new ObjectMapper();
         try {
+
             if (!file.exists()) {
                 file.createNewFile();
-
             }
-            obm.writeValue(file, new Income("ljdsfk",12,"sdf",12));
+            obm.writeValue(file,IncomeListUtils.IncomeList);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            return false;
         }
         return true;
     }
+
     private static boolean SaveExpense(){
+        File file = new File("src/main/appData/Expense.json");
+        ObjectMapper obm = new ObjectMapper();
+        try {
+
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            obm.writeValue(file,ExpenseListUtils.ExpensesList);
+        } catch (IOException e) {
+            return false;
+        }
         return true;
     }
-    private static boolean Exit(){
-        return true;
+
+    private static void Exit(){
+        StartUI.window.close();
     }
 
 
