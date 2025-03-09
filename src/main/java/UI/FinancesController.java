@@ -24,10 +24,10 @@ public class FinancesController implements Initializable {
         XYChart.Series<String, Double> I = new XYChart.Series<>();
 
         I.setName("Income");
-        I.getData().add(new XYChart.Data<>("Income "+ IncomeListUtils.Sum() + "$", IncomeListUtils.Sum()));
+        I.getData().add(new XYChart.Data<>("Income "+ IncomeListUtils.Sum() + "Ft", IncomeListUtils.Sum()));
         XYChart.Series<String, Double> E = new XYChart.Series<>();
         E.setName("Expense");
-        E.getData().add(new XYChart.Data<>("Expense "+ ExpenseListUtils.Sum() + "$", ExpenseListUtils.Sum()));
+        E.getData().add(new XYChart.Data<>("Expense "+ ExpenseListUtils.Sum() + "Ft", ExpenseListUtils.Sum()));
         Bar_Chart.getData().addAll(I,E);
     }
     //Opens Net salary calculator menu

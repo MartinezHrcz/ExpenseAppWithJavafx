@@ -11,7 +11,7 @@ import java.util.List;
 public abstract class IncomeListUtils implements GeneralListFunctions {
 
     //used to store income sources
-    public static List<Income> IncomeList = new ArrayList<>();
+    private static List<Income> IncomeList = new ArrayList<>();
 
     //Adds income source to the list, returns true if it was succesful
     public static boolean AddtoList(String name, double amount, String desc, int Date) {
@@ -24,6 +24,11 @@ public abstract class IncomeListUtils implements GeneralListFunctions {
             return false;
         }
         income = new Income(name, amount,desc, Date);
+        IncomeList.add(income);
+        return true;
+    }
+
+    public static boolean AddtoList(Income income) {
         IncomeList.add(income);
         return true;
     }
@@ -52,5 +57,9 @@ public abstract class IncomeListUtils implements GeneralListFunctions {
             sum += income.getIncomeAmount();
         }
         return sum;
+    }
+
+    public static List<Income> getIncomeList() {
+        return IncomeList;
     }
 }

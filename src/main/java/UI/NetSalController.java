@@ -44,9 +44,9 @@ public class NetSalController {
 
     //When the net salary is calculated, the list gets filled with the values
     private void FillList(float [] values){
-        NetSalList.getItems().add("Net salary: " +values[0] + "$");
-        NetSalList.getItems().add("Income Tax: " +values[1] + "$");
-        NetSalList.getItems().add("Social Tax: " +values[2] + "$");
+        NetSalList.getItems().add("Net salary: " +values[0] + "Ft");
+        NetSalList.getItems().add("Income Tax: " +values[1] + "Ft");
+        NetSalList.getItems().add("Social Tax: " +values[2] + "Ft");
     }
     //When the net salary is calculated, the stacked barchart gets filled with the values
     private void FillChart(float [] values) {

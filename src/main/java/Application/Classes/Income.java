@@ -1,5 +1,7 @@
 package Application.Classes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -11,7 +13,8 @@ public class Income {
     //Description of the income source
     private String desc;
     //used if an income source is reoccuring
-    private int dateOfrecurrenceDay = 0;
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    private int dateOfrecurrence = 0;
 
     public Income() {
 
@@ -22,7 +25,7 @@ public class Income {
         this.nameOfIncome = nameOfIncome;
         this.incomeAmount = incomeAmount;
         this.desc = desc;
-        this.dateOfrecurrenceDay = date;
+        this.dateOfrecurrence = date;
     }
     //Constructor without Day of reoccurence
     public Income(String nameOfIncome,double incomeAmount, String desc) {
@@ -44,7 +47,7 @@ public class Income {
     }
 
     public int getDateOfrecurrence() {
-        return dateOfrecurrenceDay;
+        return dateOfrecurrence;
     }
 
     @Override
@@ -53,13 +56,13 @@ public class Income {
         sb.append("Name=").append(nameOfIncome).append(" | ");
         sb.append("Amount=").append(incomeAmount).append(" | ");
         sb.append("Description='").append(desc).append(" | ");
-        if(LocalDate.now().getDayOfMonth() < dateOfrecurrenceDay){
+        if(LocalDate.now().getDayOfMonth() < dateOfrecurrence){
             sb.append("Days till next =")
-                    .append(((Integer)dateOfrecurrenceDay == null || dateOfrecurrenceDay == 0) ? "Doesn't reoccur" :  dateOfrecurrenceDay-LocalDate.now().getDayOfMonth());
+                    .append(((Integer)dateOfrecurrence == null || dateOfrecurrence == 0) ? "Doesn't reoccur" :  dateOfrecurrence-LocalDate.now().getDayOfMonth());
         }
         else{
             sb.append("Days till next=")
-                    .append(((Integer)dateOfrecurrenceDay == null || dateOfrecurrenceDay == 0) ? "Doesn't reoccur" : (30- LocalDate.now().getDayOfMonth()) + dateOfrecurrenceDay );
+                    .append(((Integer)dateOfrecurrence == null || dateOfrecurrence == 0) ? "Doesn't reoccur" : (30- LocalDate.now().getDayOfMonth()) + dateOfrecurrence );
         }
 
         return sb.toString();

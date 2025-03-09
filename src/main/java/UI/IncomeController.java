@@ -50,6 +50,6 @@ public class IncomeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //loads in the income sources
-        Income_List.getItems().setAll(IncomeListUtils.IncomeList);
+        Income_List.getItems().setAll(IncomeListUtils.getIncomeList());
     }
 }

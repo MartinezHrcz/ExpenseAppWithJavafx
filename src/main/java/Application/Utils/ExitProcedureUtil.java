@@ -20,7 +20,7 @@ public class ExitProcedureUtil {
             if (!file.exists()) {
                 file.createNewFile();
             }
-            obm.writeValue(file,IncomeListUtils.IncomeList);
+            obm.writeValue(file,IncomeListUtils.getIncomeList());
         } catch (IOException e) {
             return false;
         }
@@ -35,7 +35,7 @@ public class ExitProcedureUtil {
             if (!file.exists()) {
                 file.createNewFile();
             }
-            obm.writeValue(file,ExpenseListUtils.ExpensesList);
+            obm.writeValue(file,ExpenseListUtils.getExpensesList());
         } catch (IOException e) {
             return false;
         }

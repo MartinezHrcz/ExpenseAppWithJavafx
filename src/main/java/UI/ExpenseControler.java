@@ -48,6 +48,6 @@ public class ExpenseControler implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //loads in the expense sources
-        Expense_List.getItems().setAll(ExpenseListUtils.ExpensesList);
+        Expense_List.getItems().setAll(ExpenseListUtils.getExpensesList());
     }
 }

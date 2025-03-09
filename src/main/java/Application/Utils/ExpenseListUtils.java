@@ -10,7 +10,7 @@ import java.util.List;
 
 public abstract class ExpenseListUtils implements GeneralListFunctions {
     //used to store expenditure
-    public static List<Expenses> ExpensesList= new ArrayList<>();
+    private static List<Expenses> ExpensesList= new ArrayList<>();
 
     //Adds expense to the list, returns true if it was succesful
     public static boolean AddtoList(String name, double amount, String desc, int Date, boolean ess, boolean checked) {
@@ -21,6 +21,10 @@ public abstract class ExpenseListUtils implements GeneralListFunctions {
             return false;
         }
         expense = new Expenses(name,desc,amount,ess,checked);
+        ExpensesList.add(expense);
+        return true;
+    }
+    public static boolean AddtoList(Expenses expense) {
         ExpensesList.add(expense);
         return true;
     }
@@ -46,5 +50,9 @@ public abstract class ExpenseListUtils implements GeneralListFunctions {
             sum += expense.getAmount();
         }
         return sum;
+    }
+
+    public static List<Expenses> getExpensesList() {
+        return ExpensesList;
     }
 }
